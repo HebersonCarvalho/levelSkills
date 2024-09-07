@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Skills</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="src/favicon level skills.png" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- HTML2Canvas para exportação de imagem -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> 
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="text-center py-4">
+        <!-- Logo com link para a home -->
+        <a href="index.html">
+            <img src="src/LevelSkills.png" alt="levelskills.logo" class="logo">
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container text-center">
+        <h1>Avalie agora o nível das suas Habilidades</h1>
+
+        <div class="card mt-4 p-4"> <!-- Card para o campo de pesquisa e botão -->
+            <input type="text" id="skillInput" class="form-control" placeholder="Pesquise uma skill">
+            <button class="btn btn-primary mt-2" id="searchBtn">Pesquisar</button>
+        </div>
+
+        <!-- Result: Skill Found or Not Found -->
+        <div id="skillResult" class="mt-4"></div>
+
+        <!-- Suggested Skills Carousel -->
+        <div id="suggestedSkills" class="carousel slide mt-4" data-bs-ride="carousel">
+            <div class="carousel-inner" id="carouselInner"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#suggestedSkills" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#suggestedSkills" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <!-- Quiz Section (Hidden initially) -->
+        <div id="quizSection" class="mt-5 d-none">
+            <h2 id="quizSkill"></h2>
+            <p>Aqui ficará o quiz relacionado à skill.</p>
+            <!-- Quiz questions will be dynamically inserted here -->
+        </div>
+        
+        <!-- Feedback on Quiz Completion -->
+        <div id="quizFeedback" class="mt-5 d-none"></div>
+
+        <!-- Botão para exportar resultado como imagem -->
+        <button id="exportBtn" class="btn btn-secondary mt-3 d-none">Exportar Resultado como Imagem</button>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>Direitos reservados Heberson Carvalho - Imersão Dev com Google Gemini</p>
+    </footer>
+
+    <script src="quizDados.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
